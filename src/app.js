@@ -9,7 +9,7 @@ const log = console.log;
 //Express contains a function instead of the Normal object
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 //Define path for Express config
 const publicDirectoryPathName = path.join(__dirname,'../public');
 const changehbsPath = path.join(__dirname,'../templates/views');
@@ -92,6 +92,6 @@ app.get('*',(req,res)=>{
 })
 
 //Start Port
-app.listen((port || 3000),()=>{
-    console.log('The App is Listened on 3000');
+app.listen(port,()=>{
+    console.log(`The App is Listened on ${port}`);
 })
