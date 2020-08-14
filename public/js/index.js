@@ -10,7 +10,7 @@ const showList = document.querySelector(".list-group");
 //using Fetch to fetch the Api End Point
 
 const obj = async (addresss)=>{
-    let res = await fetch(`http://localhost:3000/weather?address=${addresss}`);
+    let res = await fetch(`/weather?address=${addresss}`);
     let data = await res.json();
     return data;
 }
